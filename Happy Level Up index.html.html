@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boneka Beruang Pink Lucu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .container {
+            position: relative;
+            width: 320px;
+            height: 550px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .text {
+            color: #ff9ed8;
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 
+                0 0 10px rgba(255, 158, 216, 0.8),
+                0 0 20px rgba(255, 107, 157, 0.6),
+                0 0 30px rgba(255, 107, 157, 0.4);
+            animation: textEntrance 1.5s ease-out 1.2s forwards, glow 3s infinite alternate 2.5s;
+            letter-spacing: 2px;
+            opacity: 0;
+            font-family: 'Dancing Script', cursive;
+            padding: 10px 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-20px);
+        }
+
+        @keyframes textEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 
+                    0 0 10px rgba(255, 158, 216, 0.8),
+                    0 0 20px rgba(255, 107, 157, 0.6);
+            }
+            to {
+                text-shadow: 
+                    0 0 15px rgba(255, 158, 216, 1),
+                    0 0 25px rgba(255, 107, 157, 0.8),
+                    0 0 35px rgba(255, 107, 157, 0.6);
+            }
+        }
+
+        .bear {
+            position: relative;
+            width: 240px;
+            height: 340px;
+            animation: bearEntrance 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            transform: translateY(120px);
+            opacity: 0;
+            filter: drop-shadow(0 0 20px rgba(255, 182, 193, 0.7));
+        }
+
+        @keyframes bearEntrance {
+            0% {
+                transform: translateY(120px) scale(0.9);
+                opacity: 0;
+            }
+            70% {
+                transform: translateY(-10px) scale(1.05);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .body {
+            position: absolute;
+            width: 220px;
+            height: 210px;
+            background: linear-gradient(135deg, #ffb6c1 0%, #ff91a4 100%);
+            border-radius: 50% 50% 45% 45%;
+            bottom: 60px;
+            left: 10px;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.15),
+                inset 0 -8px 15px rgba(255, 105, 180, 0.3),
+                inset 0 8px 15px rgba(255, 255, 255, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: bodyGlow 4s ease-in-out infinite alternate;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes bodyGlow {
+            0% {
+                box-shadow: 
+                    0 8px 25px rgba(0, 0, 0, 0.15),
+                    inset 0 -8px 15px rgba(255, 105, 180, 0.3),
+                    inset 0 8px 15px rgba(255, 255, 255, 0.4),
+                    0 0 25px rgba(255, 182, 193, 0.4);
+            }
+            100% {
+                box-shadow: 
+                    0 8px 25px rgba(0, 0, 0, 0.15),
+                    inset 0 -8px 15px rgba(255, 105, 180, 0.4),
+                    inset 0 8px 15px rgba(255, 255, 255, 0.5),
+                    0 0 35px rgba(255, 182, 193, 0.7),
+                    0 0 50px rgba(255, 105, 180, 0.4);
+            }
+        }
+
+        .head {
+            position: absolute;
+            width: 150px;
+            height: 140px;
+            background: linear-gradient(135deg, #ff91a4 0%, #ff6b9d 100%);
+            border-radius: 50% 50% 48% 48%;
+            top: 20px;
+            left: 45px;
+            transform-origin: center bottom;
+            animation: headMove 5s infinite alternate ease-in-out 1.8s;
+            box-shadow: 
+                0 6px 20px rgba(0, 0, 0, 0.15),
+                inset 0 -5px 12px rgba(219, 112, 147, 0.4),
+                inset 0 5px 12px rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes headMove {
+            0% {
+                transform: rotate(-12deg);
+            }
+            100% {
+                transform: rotate(12deg);
+            }
+        }
+
+        .ear {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff91a4 0%, #ff6b9d 100%);
+            border-radius: 50%;
+            top: -20px;
+            box-shadow: 
+                inset 0 -5px 10px rgba(219, 112, 147, 0.4),
+                0 3px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ear.left {
+            left: 5px;
+            transform: rotate(-8deg);
+        }
+
+        .ear.right {
+            right: 5px;
+            transform: rotate(8deg);
+        }
+
+        .inner-ear {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #ffb6c1 0%, #ff91a4 100%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .eye {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: radial-gradient(circle at 30% 30%, #4a4a4a, #2c2c2c);
+            border-radius: 50%;
+            top: 48px;
+            box-shadow: 
+                0 3px 6px rgba(0, 0, 0, 0.4),
+                inset 0 -1px 2px rgba(255, 255, 255, 0.1);
+        }
+
+        .eye.left {
+            left: 35px;
+        }
+
+        .eye.right {
+            right: 35px;
+        }
+
+        .eye::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #fff 30%, transparent 70%);
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+            animation: eyeSparkle 4s infinite;
+            filter: blur(0.5px);
+        }
+
+        @keyframes eyeSparkle {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .nose {
+            position: absolute;
+            width: 38px;
+            height: 28px;
+            background: radial-gradient(ellipse at center, #8b4513 0%, #654321 100%);
+            border-radius: 45%;
+            top: 75px;
+            left: 56px;
+            box-shadow: 
+                0 3px 6px rgba(0, 0, 0, 0.4),
+                inset 0 -1px 3px rgba(139, 69, 19, 0.5);
+        }
+
+        .mouth {
+            position: absolute;
+            width: 48px;
+            height: 22px;
+            border-bottom: 4px solid #8b4513;
+            border-radius: 0 0 28px 28px;
+            top: 95px;
+            left: 51px;
+            animation: smile 5s infinite alternate;
+        }
+
+        @keyframes smile {
+            0% {
+                width: 48px;
+                border-radius: 0 0 28px 28px;
+            }
+            100% {
+                width: 52px;
+                border-radius: 0 0 32px 32px;
+            }
+        }
+
+        .arm {
+            position: absolute;
+            width: 70px;
+            height: 90px;
+            background: linear-gradient(135deg, #ff91a4 0%, #ff6b9d 100%);
+            border-radius: 38px;
+            bottom: 90px;
+            box-shadow: 
+                inset 0 -5px 10px rgba(219, 112, 147, 0.4),
+                0 4px 10px rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .arm.left {
+            left: -20px;
+            transform: rotate(-28deg);
+        }
+
+        .arm.right {
+            right: -20px;
+            transform: rotate(28deg);
+        }
+
+        .leg {
+            position: absolute;
+            width: 80px;
+            height: 110px;
+            background: linear-gradient(135deg, #ff91a4 0%, #ff6b9d 100%);
+            border-radius: 45px 45px 28px 28px;
+            bottom: 0;
+            box-shadow: 
+                inset 0 -8px 12px rgba(219, 112, 147, 0.4),
+                0 4px 10px rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .leg.left {
+            left: 30px;
+            transform: rotate(-10deg);
+        }
+
+        .leg.right {
+            right: 30px;
+            transform: rotate(10deg);
+        }
+
+        .heart {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff3366 0%, #ff0033 100%);
+            transform: rotate(-45deg);
+            box-shadow: 
+                0 0 30px rgba(255, 0, 51, 0.9),
+                0 0 50px rgba(255, 51, 102, 0.7),
+                0 0 70px rgba(255, 102, 153, 0.5);
+            animation: 
+                heartbeat 2.2s infinite,
+                heartEntrance 1.5s ease-out 1s forwards;
+            z-index: 10;
+            top: 80px;
+            opacity: 0;
+            transform: rotate(-45deg) scale(0.3);
+            filter: drop-shadow(0 0 10px rgba(255, 0, 51, 0.8));
+        }
+
+        @keyframes heartEntrance {
+            0% {
+                opacity: 0;
+                transform: rotate(-45deg) scale(0.3);
+            }
+            70% {
+                opacity: 0.8;
+                transform: rotate(-45deg) scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(-45deg) scale(1);
+            }
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff3366 0%, #ff0033 100%);
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -35px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 35px;
+        }
+
+        .heart-inner {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #ff6699 0%, #ff3366 100%);
+            transform: rotate(-45deg);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: innerHeartbeat 2.2s infinite alternate;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: rotate(-45deg) scale(1);
+            }
+            25% {
+                transform: rotate(-45deg) scale(1.08);
+            }
+            50% {
+                transform: rotate(-45deg) scale(1.15);
+            }
+            75% {
+                transform: rotate(-45deg) scale(1.08);
+            }
+            100% {
+                transform: rotate(-45deg) scale(1);
+            }
+        }
+
+        @keyframes innerHeartbeat {
+            0%, 100% {
+                opacity: 0.4;
+                transform: translate(-50%, -50%) rotate(-45deg) scale(0.8);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+            }
+        }
+
+        .floor {
+            position: absolute;
+            width: 290px;
+            height: 28px;
+            background: linear-gradient(to top, #2d2d4e, #4a4a7a);
+            border-radius: 14px;
+            bottom: -50px;
+            box-shadow: 
+                0 0 20px rgba(255, 182, 193, 0.3),
+                inset 0 3px 8px rgba(255, 255, 255, 0.1);
+            animation: floorEntrance 1.2s ease-out 0.6s forwards;
+            opacity: 0;
+        }
+
+        @keyframes floorEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: radial-gradient(circle, #fff, #ffb6c1);
+            border-radius: 50%;
+            animation: twinkle 4s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: glowPulse 5s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0.4;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translate(-50%, -50%) scale(1.15);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glow-effect"></div>
+        <div class="text">Happy Level Up Kue</div>
+        <div class="bear">
+            <div class="body">
+                <div class="heart">
+                    <div class="heart-inner"></div>
+                </div>
+            </div>
+            <div class="head">
+                <div class="ear left">
+                    <div class="inner-ear"></div>
+                </div>
+                <div class="ear right">
+                    <div class="inner-ear"></div>
+                </div>
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+            <div class="leg left"></div>
+            <div class="leg right"></div>
+        </div>
+        <div class="floor"></div>
+        <div class="stars" id="stars"></div>
+    </div>
+
+    <script>
+        // Membuat bintang-bintang berkelap-kelip di latar belakang
+        const starsContainer = document.getElementById('stars');
+        const starCount = 100;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Posisi acak
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            
+            // Ukuran acak
+            const size = Math.random() * 5 + 1;
+            
+            // Animasi dengan durasi acak
+            const duration = Math.random() * 5 + 3;
+            const delay = Math.random() * 8;
+            
+            star.style.left = `${left}%`;
+            star.style.top = `${top}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.animationDuration = `${duration}s`;
+            star.style.animationDelay = `${delay}s`;
+            
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
